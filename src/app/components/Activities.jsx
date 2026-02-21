@@ -42,7 +42,7 @@ export default function Activities({
         </div>
 
         {/* Cards Grid: 3 columns on desktop */}
-        <div className="activities-cards mt-[var(--spacing-tents-subheading-to-cards)] grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-tents-card-gap)]">
+        <div className="activities-cards mt-[var(--spacing-tents-subheading-to-cards)] grid grid-cols-1 md:grid-cols-3 gap-5">
           {items.map((it, idx) => (
             <article
               key={idx}
@@ -50,7 +50,7 @@ export default function Activities({
               role="article"
             >
               {/* Image: No top padding, flush to edges */}
-              <div className="relative w-full h-[320px]">
+				<div className="relative w-full h-[280px]">
                 <Image
                   src={it.image}
                   alt={it.title}

@@ -32,10 +32,10 @@
   --spacing-hero-paragraph-to-ctas: 48px;
   --spacing-hero-cta-gap: 16px;
   --spacing-tents-section-x: 160px;
-  --spacing-tents-section-y: 80px;
+  --spacing-tents-section-y: 30px;
   --spacing-tents-heading-to-subheading: 16px;
   --spacing-tents-subheading-to-cards: 16px;
-  --spacing-tents-card-gap: 40px;
+  --spacing-tents-card-gap: 30px;
   --spacing-tents-card-padding-top: 32px;
   --spacing-nav-item-gap: 50px;
 
@@ -196,7 +196,7 @@ h4 {
 /* Tents section */
 .tents-section {
   background-color: #F2EEE7;
-  padding-inline: var(--spacing-tents-section-x);
+  padding-inline: calc(var(--spacing-tents-section-x) - 10px);
   padding-block: var(--spacing-tents-section-y);
 }
 
@@ -231,7 +231,7 @@ h4 {
 }
 
 .tents-card-image {
-  height: 320px;
+  height: 280px;
   width: 100%;
   object-fit: cover;
 }
@@ -302,7 +302,7 @@ h4 {
 /* Activities section */
 .activities-section {
   background-color: #F2EEE7;
-  padding-inline: var(--spacing-tents-section-x);
+  padding-inline: calc(var(--spacing-tents-section-x) - 10px);
   padding-block: var(--spacing-tents-section-y);
 }
 
@@ -364,7 +364,7 @@ h4 {
   font-size: var(--font-size-helper);
   line-height: var(--line-height-helper);
   text-align: center;
-  margin-top: 48px;
+  margin-top: 30px;
 }
 
 @media (max-width: 767px) {
