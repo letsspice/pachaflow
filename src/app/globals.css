@@ -123,7 +123,6 @@ h4 {
 }
 
 .hero-section {
-  min-height: var(--spacing-hero-height);
   position: relative;
 }
 
@@ -136,6 +135,9 @@ h4 {
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-heading {
