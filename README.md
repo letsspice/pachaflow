@@ -1,6 +1,6 @@
-# PachaFlow
+# The Tented Stay
 
-A direct-booking micro‑SaaS proof of concept (POC) for Pacha Waterfront Nothi in Chuka. PachaFlow consolidates fragmented DM-based booking conversations into a single, mobile‑first “Digital Concierge” that captures requests and presents them in a unified admin feed.
+A direct-booking micro‑SaaS proof of concept (POC) for Pacha Waterfront Nothi in Chuka. The Tented Stay consolidates fragmented DM-based booking conversations into a single, mobile‑first “Digital Concierge” that captures requests and presents them in a unified admin feed.
 
 > Important: This is a demo‑friendly POC. All data is stored in browser `localStorage` for zero‑latency presentations and offline reliability. No real backend or authentication is included.
 
@@ -87,14 +87,14 @@ High‑level structure (App Router):
 ### Guest Flow
 1. Guest opens landing page and sees hero branding.
 2. Fills availability form (Name, Phone/WhatsApp, Dates, Count, Stay Type).
-3. Submits request → persisted via `localStorage` (e.g., key `pachaflow:bookings`).
+3. Submits request → persisted via `localStorage` (e.g., key `thetentedstay:bookings`).
 4. Sees "Thank You" screen with next steps and an optional Booking.com button.
 
 ### Admin Flow
 1. Admin uses mock login to access dashboard.
 2. Dashboard loads all requests from `localStorage` as a unified feed.
 3. Admin reviews details and sets status (Pending/Confirmed/Rejected).
-4. On "Confirm via WhatsApp", PachaFlow opens WhatsApp with a pre‑filled message template targeting the guest’s number.
+4. On "Confirm via WhatsApp", The Tented Stay opens WhatsApp with a pre‑filled message template targeting the guest’s number.
 
 ## System Architecture (Demo)
 
@@ -104,8 +104,8 @@ High‑level structure (App Router):
 - **Action:** Status change updates the record in `localStorage`; UI reflects immediately.
 
 Suggested `localStorage` keys:
-- `pachaflow:bookings` — array of booking objects
-- `pachaflow:session` — mock admin session token/flag
+- `thetentedstay:bookings` — array of booking objects
+- `thetentedstay:session` — mock admin session token/flag
 
 Booking object shape (example):
 
