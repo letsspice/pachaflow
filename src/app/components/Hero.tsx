@@ -66,7 +66,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Content Layer */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-[900px] px-6 mt-20">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-[900px] px-6 mt-10">
         <h1 className="hero-heading">
           Reconnect with Nature by the River
         </h1>
