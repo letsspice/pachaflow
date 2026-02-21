@@ -298,3 +298,82 @@ h4 {
   border: 1px solid #D1CBC1;
   background-color: transparent;
 }
+
+/* Activities section */
+.activities-section {
+  background-color: #F2EEE7;
+  padding-inline: var(--spacing-tents-section-x);
+  padding-block: var(--spacing-tents-section-y);
+}
+
+.activities-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-section-heading); /* 32px */
+  line-height: var(--line-height-section-heading); /* 41.6px */
+  color: var(--color-heading); /* #3A3A34 */
+  text-align: center;
+  margin-bottom: var(--spacing-tents-heading-to-subheading);
+}
+
+.activities-subheading {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-body); /* #1E1E1A */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.activity-card {
+  border-radius: var(--radius-card);
+  overflow: hidden; 
+  padding-top: 0; /* Ensures image starts at the very top */
+}
+
+.activity-card-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-card-heading); /* 24px */
+  line-height: var(--line-height-card-heading); /* 28.8px */
+  color: var(--color-card-heading); /* #1C1C18 */
+}
+
+.activity-card-body {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: var(--font-size-body); /* 16px */
+  line-height: var(--line-height-body); /* 25.6px */
+  color: var(--color-body);
+}
+
+/* Price color matching the designer's Forest Green */
+.activity-price-green {
+  font-family: var(--font-body), serif;
+  color: #2F4F3E; /* Tented Forest Green */
+  font-weight: 600;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+/* Footer note style */
+.activity-footer-note {
+  font-family: var(--font-body), serif;
+  color: var(--color-helper); /* #4A4A45 */
+  font-size: var(--font-size-helper);
+  line-height: var(--line-height-helper);
+  text-align: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 767px) {
+  .activities-section {
+    padding-inline: 24px;
+    padding-block: 40px;
+  }
+  
+  .activity-footer-note {
+    margin-top: 32px;
+  }
+}
