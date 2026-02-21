@@ -1,8 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Simple global styles */
+/* Theme variables for The Tented Stay */
+:root {
+  --background: #F2EEE7;
+  --foreground: #1E1E1A;
+}
+
+/* Tailwind v4 CSS-first theme tokens */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-hero-text: #F2EEE7;
+  --color-hero-overlay: color-mix(in oklab, #000, transparent 70%); /* 30% black overlay */
+  --color-cta-primary-bg: #2F4F3E;
+  --color-cta-primary-text: #F2EEE7;
+  --color-heading: #3A3A34;
+  --color-body: #1E1E1A;
+  --color-card-heading: #1C1C18;
+  --color-helper: #4A4A45;
+  --color-stroke: #D1CBC1;
+
+  /* Fonts (wired to next/font variables) */
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-source-serif-4);
+
+  /* Spacing tokens from design */
+  --spacing-hero-height: 700px;
+  --spacing-nav-to-hero-heading: 120px;
+  --spacing-hero-heading-to-paragraph: 24px;
+  --spacing-hero-paragraph-to-ctas: 48px;
+  --spacing-hero-cta-gap: 16px;
+  --spacing-tents-section-x: 160px;
+  --spacing-tents-section-y: 80px;
+  --spacing-tents-heading-to-subheading: 16px;
+  --spacing-tents-subheading-to-cards: 16px;
+  --spacing-tents-card-gap: 40px;
+  --spacing-tents-card-padding-top: 32px;
+  --spacing-nav-item-gap: 50px;
+
+  /* Radii */
+  --radius-card: 12px;
+  --radius-button: 8px;
+
+  /* Typography sizes */
+  --font-size-logo: 24px;
+  --line-height-logo: 31.2px;
+
+  --font-size-menu: 16px;
+  --line-height-menu: 25.6px;
+  --letter-spacing-menu: 1.25px;
+
+  --font-size-hero-heading: 56px;
+  --line-height-hero-heading: 72.8px;
+
+  --font-size-hero-body: 18px;
+  --line-height-hero-body: 28.8px;
+
+  --font-size-section-heading: 32px;
+  --line-height-section-heading: 41.6px;
+
+  --font-size-card-heading: 24px;
+  --line-height-card-heading: 28.8px;
+
+  --font-size-body: 16px;
+  --line-height-body: 25.6px;
+
+  --font-size-helper: 14px;
+  --line-height-helper: 22.4px;
+}
+
+/* Responsive overrides for section padding on mobile */
+@media (max-width: 767px) {
+  :root {
+    --spacing-tents-section-x: 24px;
+    --spacing-tents-section-y: 40px;
+  }
+}
+
+/* Base */
 html,
 body {
   height: 100%;
@@ -10,6 +86,213 @@ body {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  background: var(--background);
+  color: var(--color-body);
+  font-family: var(--font-body), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), serif;
+  color: var(--color-heading);
+}
+
+/* Header & Navigation */
+.logo {
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  font-size: var(--font-size-logo);
+  line-height: var(--line-height-logo);
+  color: #F2EEE7;
+}
+
+.nav-item {
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+  font-size: var(--font-size-menu);
+  line-height: var(--line-height-menu);
+  letter-spacing: var(--letter-spacing-menu);
+  color: #F2EEE7;
+}
+
+.nav-items {
+  display: flex;
+  column-gap: var(--spacing-nav-item-gap);
+}
+
+.hero-section {
+  min-height: var(--spacing-hero-height);
+  position: relative;
+}
+
+.hero-overlay-30 {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, #000, transparent 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-hero-heading);
+  line-height: var(--line-height-hero-heading);
+  color: #F2EEE7;
+  margin-top: var(--spacing-nav-to-hero-heading);
+}
+
+.hero-paragraph {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: var(--font-size-hero-body);
+  line-height: var(--line-height-hero-body);
+  color: #F2EEE7;
+  margin-top: var(--spacing-hero-heading-to-paragraph);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--spacing-hero-cta-gap);
+  margin-top: var(--spacing-hero-paragraph-to-ctas);
+}
+
+/* CTA Buttons */
+.btn-primary {
+  background-color: #2F4F3E;
+  color: #F2EEE7;
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+  font-size: var(--font-size-menu);
+  line-height: var(--line-height-menu);
+  border-radius: var(--radius-button);
+  padding-inline: 24px;
+  padding-block: 14px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+  font-size: var(--font-size-menu);
+  line-height: var(--line-height-menu);
+  border-radius: var(--radius-button);
+  padding-inline: 24px;
+  padding-block: 14px;
+  cursor: pointer;
+  color: #F2EEE7;
+  background-color: color-mix(in oklab, #F2EEE7, transparent 80%);
+  backdrop-filter: blur(12px);
+}
+
+/* Tents section */
+.tents-section {
+  background-color: #F2EEE7;
+  padding-inline: var(--spacing-tents-section-x);
+  padding-block: var(--spacing-tents-section-y);
+}
+
+.tents-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-section-heading);
+  line-height: var(--line-height-section-heading);
+  color: #3A3A34;
+}
+
+.tents-subheading {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1E1E1A;
+  margin-top: var(--spacing-tents-heading-to-subheading);
+}
+
+.tents-cards {
+  display: grid;
+  gap: var(--spacing-tents-card-gap);
+  margin-top: var(--spacing-tents-subheading-to-cards);
+}
+
+.tents-card {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: #FFFFFF;
+  padding-top: var(--spacing-tents-card-padding-top);
+}
+
+.tents-card-image {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tents-card-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-card-heading);
+  line-height: var(--line-height-card-heading);
+  color: #1C1C18;
+}
+
+.tents-card-body {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: #1E1E1A;
+}
+
+.tents-helper-text {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: var(--font-size-helper);
+  line-height: var(--line-height-helper);
+  color: #4A4A45;
+}
+
+.tents-helper-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.tents-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  margin-top: 32px;
+}
+
+.tents-btn-primary {
+  background-color: #2F4F3E;
+  color: #F2EEE7;
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+  font-size: var(--font-size-menu);
+  line-height: var(--line-height-menu);
+  border-radius: var(--radius-button);
+  padding-inline: 24px;
+  padding-block: 14px;
+  cursor: pointer;
+}
+
+.tents-btn-secondary {
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+  font-size: var(--font-size-menu);
+  line-height: var(--line-height-menu);
+  border-radius: var(--radius-button);
+  padding-inline: 24px;
+  padding-block: 14px;
+  cursor: pointer;
+  color: #4A4A45;
+  border: 1px solid #D1CBC1;
+  background-color: transparent;
 }
