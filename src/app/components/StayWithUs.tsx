@@ -35,7 +35,7 @@ export default function StayWithUs({
     <section className="tents-section" aria-labelledby="stay-with-us-heading">
       <div className="w-full max-w-[1440px] mx-auto">
         {/* Heading block */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <h2 id="stay-with-us-heading" className="tents-heading">
             Stay With Us
           </h2>
@@ -53,13 +53,11 @@ export default function StayWithUs({
           {cards.map((card, idx) => (
             <article
               key={idx}
-              /* REMOVED: padding-top from .tents-card in your CSS usually causes the gap */
-              /* We style it here to ensure it overrides the global .tents-card padding */
               className="tents-card bg-white shadow-sm !pt-0 flex flex-col overflow-hidden"
               role="listitem"
             >
-              {/* Card Image - Flush to top with radius applied by parent overflow-hidden */}
-        <div className="w-full h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] relative">
+              {/* Card Image */}
+              <div className="w-full h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] relative">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -70,10 +68,9 @@ export default function StayWithUs({
                 />
               </div>
 
-              {/* Card content - Applied the designer's padding-top here instead */}
+              {/* Card content */}
               <div className="p-6 pt-[var(--spacing-tents-card-padding-top)] flex flex-col flex-grow">
                 <h3 className="tents-card-heading">{card.title}</h3>
-
                 <p className="tents-card-body mt-3">{card.description}</p>
 
                 {/* Helper row */}
@@ -101,18 +98,18 @@ export default function StayWithUs({
                     ))}
                 </div>
 
-                {/* CTAs */}
-                <div className="tents-ctas flex items-center gap-[12px] mt-auto pt-2">
+                {/* CTAs: Stacked on mobile, side-by-side on sm+ */}
+                <div className="tents-ctas flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-auto pt-4">
                   <a
                     href={card.primaryHref}
-                    className="tents-btn-primary inline-flex items-center justify-center flex-1 md:flex-none"
+                    className="tents-btn-primary inline-flex items-center justify-center whitespace-nowrap"
                   >
                     Check Availability
                   </a>
 
                   <a
                     href={card.secondaryHref}
-                    className="tents-btn-secondary inline-flex items-center justify-center flex-1 md:flex-none"
+                    className="tents-btn-secondary inline-flex items-center justify-center whitespace-nowrap"
                   >
                     View Details
                   </a>

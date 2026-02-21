@@ -70,14 +70,6 @@
   --line-height-helper: 22.4px;
 }
 
-/* Responsive overrides for section padding on mobile */
-@media (max-width: 767px) {
-  :root {
-    --spacing-tents-section-x: 24px;
-    --spacing-tents-section-y: 40px;
-  }
-}
-
 /* Base */
 html,
 body {
@@ -367,7 +359,20 @@ h4 {
   margin-top: 30px;
 }
 
+@media (max-width: 640px) {
+  /* Full width buttons on mobile */
+  .tents-btn-primary, .tents-btn-secondary {
+    width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
+  /* Responsive overrides for section padding on mobile */
+  :root {
+    --spacing-tents-section-x: 24px;
+    --spacing-tents-section-y: 40px;
+  }
+
   /* Section padding tighten on mobile (already applied to root tokens above for tents) */
   .activities-section {
     padding-inline: 20px;
@@ -411,5 +416,36 @@ h4 {
     line-height: 20px;
     padding-inline: 18px;
     padding-block: 10px;
+  }
+
+  .hero-heading {
+    font-size: 36px; /* Scaled down for mobile */
+    line-height: 44px;
+    margin-top: 20px;
+  }
+
+  .hero-paragraph {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-ctas {
+    flex-direction: column; /* Stack buttons on small screens */
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%; /* Full width buttons on mobile */
+    text-align: center;
+    padding-block: 12px;
+  }
+
+  .btn-primary {
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
   }
 }
