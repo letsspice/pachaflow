@@ -59,7 +59,7 @@ export default function StayWithUs({
               role="listitem"
             >
               {/* Card Image - Flush to top with radius applied by parent overflow-hidden */}
-				<div className="w-full h-[280px] relative">
+        <div className="w-full h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] relative">
                 <Image
                   src={card.image}
                   alt={card.title}

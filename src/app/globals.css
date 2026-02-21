@@ -368,12 +368,48 @@ h4 {
 }
 
 @media (max-width: 767px) {
+  /* Section padding tighten on mobile (already applied to root tokens above for tents) */
   .activities-section {
-    padding-inline: 24px;
-    padding-block: 40px;
+    padding-inline: 20px;
+    padding-block: 32px;
   }
-  
+
+  /* Typography scaling for mobile */
+  .tents-heading,
+  .activities-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .tents-subheading,
+  .activities-subheading,
+  .tents-card-body,
+  .activity-card-body {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .tents-card-heading,
+  .activity-card-heading {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .tents-helper-text,
+  .activity-price-green,
   .activity-footer-note {
-    margin-top: 32px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  /* Buttons: slightly smaller text & padding on mobile */
+  .tents-btn-primary,
+  .tents-btn-secondary,
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px;
+    line-height: 20px;
+    padding-inline: 18px;
+    padding-block: 10px;
   }
 }
