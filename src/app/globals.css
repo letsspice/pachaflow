@@ -27,15 +27,15 @@
 
   /* Spacing tokens from design */
   --spacing-hero-height: 700px;
-  --spacing-nav-to-hero-heading: 120px;
+  --spacing-nav-to-hero-heading: 80px;
   --spacing-hero-heading-to-paragraph: 24px;
   --spacing-hero-paragraph-to-ctas: 48px;
   --spacing-hero-cta-gap: 16px;
   --spacing-tents-section-x: 160px;
-  --spacing-tents-section-y: 80px;
+  --spacing-tents-section-y: 30px;
   --spacing-tents-heading-to-subheading: 16px;
   --spacing-tents-subheading-to-cards: 16px;
-  --spacing-tents-card-gap: 40px;
+  --spacing-tents-card-gap: 30px;
   --spacing-tents-card-padding-top: 32px;
   --spacing-nav-item-gap: 50px;
 
@@ -68,14 +68,6 @@
 
   --font-size-helper: 14px;
   --line-height-helper: 22.4px;
-}
-
-/* Responsive overrides for section padding on mobile */
-@media (max-width: 767px) {
-  :root {
-    --spacing-tents-section-x: 24px;
-    --spacing-tents-section-y: 40px;
-  }
 }
 
 /* Base */
@@ -123,7 +115,6 @@ h4 {
 }
 
 .hero-section {
-  min-height: var(--spacing-hero-height);
   position: relative;
 }
 
@@ -136,6 +127,9 @@ h4 {
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-heading {
@@ -194,7 +188,7 @@ h4 {
 /* Tents section */
 .tents-section {
   background-color: #F2EEE7;
-  padding-inline: var(--spacing-tents-section-x);
+  padding-inline: calc(var(--spacing-tents-section-x) - 10px);
   padding-block: var(--spacing-tents-section-y);
 }
 
@@ -229,7 +223,7 @@ h4 {
 }
 
 .tents-card-image {
-  height: 320px;
+  height: 280px;
   width: 100%;
   object-fit: cover;
 }
@@ -295,4 +289,163 @@ h4 {
   color: #4A4A45;
   border: 1px solid #D1CBC1;
   background-color: transparent;
+}
+
+/* Activities section */
+.activities-section {
+  background-color: #F2EEE7;
+  padding-inline: calc(var(--spacing-tents-section-x) - 10px);
+  padding-block: var(--spacing-tents-section-y);
+}
+
+.activities-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-section-heading); /* 32px */
+  line-height: var(--line-height-section-heading); /* 41.6px */
+  color: var(--color-heading); /* #3A3A34 */
+  text-align: center;
+  margin-bottom: var(--spacing-tents-heading-to-subheading);
+}
+
+.activities-subheading {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-body); /* #1E1E1A */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.activity-card {
+  border-radius: var(--radius-card);
+  overflow: hidden; 
+  padding-top: 0; /* Ensures image starts at the very top */
+}
+
+.activity-card-heading {
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: var(--font-size-card-heading); /* 24px */
+  line-height: var(--line-height-card-heading); /* 28.8px */
+  color: var(--color-card-heading); /* #1C1C18 */
+}
+
+.activity-card-body {
+  font-family: var(--font-body), serif;
+  font-weight: 400;
+  font-size: var(--font-size-body); /* 16px */
+  line-height: var(--line-height-body); /* 25.6px */
+  color: var(--color-body);
+}
+
+/* Price color matching the designer's Forest Green */
+.activity-price-green {
+  font-family: var(--font-body), serif;
+  color: #2F4F3E; /* Tented Forest Green */
+  font-weight: 600;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+/* Footer note style */
+.activity-footer-note {
+  font-family: var(--font-body), serif;
+  color: var(--color-helper); /* #4A4A45 */
+  font-size: var(--font-size-helper);
+  line-height: var(--line-height-helper);
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media (max-width: 640px) {
+  /* Full width buttons on mobile */
+  .tents-btn-primary, .tents-btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Responsive overrides for section padding on mobile */
+  :root {
+    --spacing-tents-section-x: 24px;
+    --spacing-tents-section-y: 40px;
+  }
+
+  /* Section padding tighten on mobile (already applied to root tokens above for tents) */
+  .activities-section {
+    padding-inline: 20px;
+    padding-block: 32px;
+  }
+
+  /* Typography scaling for mobile */
+  .tents-heading,
+  .activities-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .tents-subheading,
+  .activities-subheading,
+  .tents-card-body,
+  .activity-card-body {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .tents-card-heading,
+  .activity-card-heading {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .tents-helper-text,
+  .activity-price-green,
+  .activity-footer-note {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  /* Buttons: slightly smaller text & padding on mobile */
+  .tents-btn-primary,
+  .tents-btn-secondary,
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px;
+    line-height: 20px;
+    padding-inline: 18px;
+    padding-block: 10px;
+  }
+
+  .hero-heading {
+    font-size: 36px; /* Scaled down for mobile */
+    line-height: 44px;
+    margin-top: 20px;
+  }
+
+  .hero-paragraph {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-ctas {
+    flex-direction: column; /* Stack buttons on small screens */
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%; /* Full width buttons on mobile */
+    text-align: center;
+    padding-block: 12px;
+  }
+
+  .btn-primary {
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
 }
