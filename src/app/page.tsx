@@ -3,6 +3,7 @@ import StayWithUs from "./components/StayWithUs";
 import Activities from "./components/Activities";
 import DineByRiver from "./components/DineByRiver";
 import RiverviewCTA from "./components/RiverviewCTA";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Activities />
       <DineByRiver />
       <RiverviewCTA />
+      <ContactSection />
     </>
   );
 }
