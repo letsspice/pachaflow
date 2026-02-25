@@ -16,7 +16,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "The Tented Stay",
-  description: "Luxury tented stay experience",
+  description: "An eco-conscious riverside sanctuary designed for those seeking peace.",
 };
 
 export default function RootLayout({
