@@ -34,12 +34,12 @@ export default function RiverviewCTA({
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[var(--spacing-tents-section-x)] py-14 md:py-20 flex flex-col items-center text-center">
         <h2 
           id="cta-heading" 
-          className="text-[40px] font-display font-700 !mt-0 !text-white"
+          className="text-[30px] leading-[38px] md:text-[40px] md:leading-[48px] font-display font-bold !mt-0 !text-white"
         >
           Your Riverview Escape Awaits
         </h2>
 
-        <div className="mt-10">
+        <div className="mt-8 md:mt-10 w-full flex justify-center">
           <Link
             href="/book"
             className="btn-primary inline-flex items-center justify-center min-w-[200px]"
